@@ -2,6 +2,7 @@
 #include "SpriteNode.h"
 #include <Texture.h>
 #include <Renderer2D.h>
+#include "BoxCollider.h"
 
 #include <iostream>
 
@@ -13,6 +14,10 @@ GameEntity::GameEntity(aie::Texture * tex, Vector2 renderOrigin) {
 	m_baseSprite = tex;
 	m_base = std::unique_ptr<SpriteNode>(new SpriteNode(m_baseSprite));
 	m_base->setParent(this);
+
+	m_collider = std::unique_ptr<BoxCollider>(new BoxCollider());
+	m_collider->setParent(this);
+	m_collider->setDebug(true);
 }
 
 GameEntity::~GameEntity() {
@@ -20,7 +25,7 @@ GameEntity::~GameEntity() {
 
 void GameEntity::update(float dt) {
 	Node::update(dt);
-	//m_hitbox->update(dt);
+	m_collider->update(dt);
 }
 
 void GameEntity::render(aie::Renderer2D *renderer) {
@@ -33,6 +38,7 @@ void GameEntity::render(aie::Renderer2D *renderer) {
 			m_base->getLocRot());
 		renderer->setRenderColour(0xffffffff);
 	}
+	m_collider->render(renderer);
 }
 
 void GameEntity::setOrigin(const Vector2 & origin) {

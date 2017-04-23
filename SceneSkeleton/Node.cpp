@@ -21,10 +21,11 @@ void Node::render(aie::Renderer2D * renderer) {
 }
 
 void Node::setSize(const Vector2 & size) {
+	m_size = size;
 }
 
-Vector2 & Node::getSize() {
-	return Vector2();
+Vector2& Node::getSize() {
+	return m_size;
 }
 
 void Node::setParent(Node * parent) {

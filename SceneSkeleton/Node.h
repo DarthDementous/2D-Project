@@ -38,4 +38,5 @@ protected:
 	Node *m_parent = nullptr;
 	Matrix3 m_local;
 	bool m_debugDraw = false;
+	Vector2 m_size;
 };

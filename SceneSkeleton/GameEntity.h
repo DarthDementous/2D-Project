@@ -2,6 +2,7 @@
 #include "Node.h"
 #include <memory>
 
+class BoxCollider;
 class SpriteNode;
 namespace aie {
 	class Texture;
@@ -27,5 +28,6 @@ public:
 protected:
 	std::unique_ptr<SpriteNode> m_base;
 	aie::Texture *m_baseSprite = nullptr;
+	std::unique_ptr<BoxCollider> m_collider;
 };
 

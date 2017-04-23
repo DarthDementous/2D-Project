@@ -13,9 +13,6 @@ public:
 
 	void render(aie::Renderer2D *renderer);
 
-	void setSize(const Vector2 &size);
-	Vector2& getSize();
-
 	void setOrigin(const Vector2 &origin);
 	Vector2& getOrigin();
 
@@ -23,6 +20,6 @@ public:
 
 protected:
 	aie::Texture *m_sprite;
-	Vector2 m_size, m_origin = Vector2(0.5, 0.5);
+	Vector2 m_origin = Vector2(0.5, 0.5);
 };
 

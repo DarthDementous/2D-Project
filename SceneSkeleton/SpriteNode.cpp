@@ -26,14 +26,6 @@ void SpriteNode::render(aie::Renderer2D * renderer) {
 	renderer->drawSprite(m_sprite, pos.x, pos.y, m_size.x, m_size.y, rot, 0, m_origin.x, m_origin.y);
 }
 
-void SpriteNode::setSize(const Vector2 & size) {
-	m_size = size;
-}
-
-Vector2& SpriteNode::getSize() {
-	return m_size;
-}
-
 void SpriteNode::setOrigin(const Vector2 & origin) {
 	m_origin = origin;
 }

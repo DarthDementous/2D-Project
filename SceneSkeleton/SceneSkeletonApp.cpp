@@ -48,7 +48,7 @@ bool SceneSkeletonApp::startup() {
 	m_nodes.push_back(rock.get());
 
 	//tank->setDebug(true);
-	rock->setDebug(true);
+	//rock->setDebug(true);
 
 	return true;
 }
@@ -73,7 +73,7 @@ void SceneSkeletonApp::update(float deltaTime) {
 	tank->checkCollision(rock.get());
 
 	rock->translate(Vector2(0.01f, 0));
-	//rock->rotate(0.001f);
+	rock->rotate(0.001f);
 	rock->update(deltaTime);
 
 	for (size_t i = 0; i < m_nodes.size(); ++i)

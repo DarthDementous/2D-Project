@@ -1,6 +1,7 @@
 #pragma once
 #include "Node.h"
 #include <vector>
+#include <memory>
 
 class BoxCollider : public Node {
 public:
@@ -17,7 +18,7 @@ public:
 	Vector2& getSize();
 
 protected:
-	std::vector<Vector2> m_points;
+	std::vector<std::unique_ptr<Node>> m_points;
 	Vector2 m_size;
 };
 
